@@ -13,9 +13,9 @@
     "browserify-middleware": "^7.0.0",
     "connect-livereload": "^0.5.4",
     "express": "^4.13.3",
+    "klip": "^0.2.0",
     "less-middleware": "^2.0.1",
     "livereload": "^0.4.0",
-    "simple-html-index": "^1.1.2",
-    "tiny-lr": "^0.2.1"
+    "simple-html-index": "^1.1.2"
   }
 }

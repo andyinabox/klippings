@@ -1,5 +1,8 @@
 var express = require('express')
-	, html = require('simple-html-index');
+	, html = require('simple-html-index')
+	, livereload = require('livereload')
+	, klip = require('klip');
+
 
 // load package info
 var pkg = require('./package.json')
@@ -23,10 +26,10 @@ app.get('/', function(req, res, next) {
 	}).pipe(res);
 });
 
+// start main server
 app.listen(3000);
 
-// livereload
-var livereload = require('livereload');
+// livereload server
 var server = livereload.createServer({
 	exts: ['less', 'js', 'html', 'css']
 });
