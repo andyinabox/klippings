@@ -1,1 +1,4 @@
-console.log('It works?');
+var clippingTpl = require('./clipping.hbs');
+
+
+document.body.innerHTML = clippingTpl({ name: "Yooooo" });

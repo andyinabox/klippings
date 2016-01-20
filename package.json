@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node app.js",
+    "sync": "rsync -avz /Volumes/Kindle/documents/My\\ Clippings.txt ./data/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andy Dayton <amdayton@gmail.com> (http://andydayton.com/)",
@@ -13,6 +14,8 @@
     "browserify-middleware": "^7.0.0",
     "connect-livereload": "^0.5.4",
     "express": "^4.13.3",
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.4.1",
     "klip": "^0.2.0",
     "less-middleware": "^2.0.1",
     "livereload": "^0.4.0",

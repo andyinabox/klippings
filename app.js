@@ -14,7 +14,7 @@ var app = express();
 app
 	.use(require('less-middleware')(__dirname + '/client'))
 	.use(require('connect-livereload')({ port: 35729 }))
-	.use(require('browserify-middleware')(__dirname + '/client'))
+	.use(require('browserify-middleware')(__dirname + '/client', { transform: ['hbsfy'] }))
 	.use(express.static('client'));
 
 // root html
@@ -24,6 +24,13 @@ app.get('/', function(req, res, next) {
 		, entry: 'index.js'
 		, css: 'styles.css'
 	}).pipe(res);
+});
+
+app.get('/clippings', function(req, res, next) {
+	klip.parse('data/My Clippings.txt', { pretty: true }, function(err, data) {
+		if(err) throw new Error(err);
+		else res.json(data);
+	});
 });
 
 // start main server
