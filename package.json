@@ -17,8 +17,9 @@
     "handlebars": "^4.0.5",
     "hbsfy": "^2.4.1",
     "klip": "^0.2.0",
-    "less-middleware": "^2.0.1",
     "livereload": "^0.4.0",
+    "node-sass-middleware": "^0.9.7",
+    "sanitize.css": "^3.0.0",
     "simple-html-index": "^1.1.2"
   }
 }

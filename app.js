@@ -10,11 +10,14 @@ var pkg = require('./package.json')
 // setup app
 var app = express();
 
+var clientPath = __dirname + '/client';
+
 // middleware
 app
-	.use(require('less-middleware')(__dirname + '/client'))
+	// .use(require('less-middleware')(__dirname + '/client'))
+	.use(require('node-sass-middleware')({src: clientPath}))
 	.use(require('connect-livereload')({ port: 35729 }))
-	.use(require('browserify-middleware')(__dirname + '/client', { transform: ['hbsfy'] }))
+	.use(require('browserify-middleware')(clientPath, { transform: ['hbsfy'] }))
 	.use(express.static('client'));
 
 // root html
@@ -38,6 +41,6 @@ app.listen(3000);
 
 // livereload server
 var server = livereload.createServer({
-	exts: ['less', 'js', 'html', 'css']
+	exts: ['less', 'sass', 'js', 'html', 'css']
 });
-server.watch(__dirname + "/client");
+server.watch(clientPath);
