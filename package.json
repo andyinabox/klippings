@@ -21,5 +21,6 @@
     "node-sass-middleware": "^0.9.7",
     "sanitize.css": "^3.0.0",
     "simple-html-index": "^1.1.2"
-  }
+  },
+  "devDependencies": {}
 }
