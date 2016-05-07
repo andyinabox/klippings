@@ -1,25 +1,26 @@
 {
   "name": "klippings",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Kindle clippings viewer",
   "main": "index.js",
   "scripts": {
     "start": "budo index.js --live --open --title='klippings' -H=localhost --css=styles.css",
-    "sync": "node sync.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "budo-demo index.js -c styles.css --title='klippings'",
+    "deploy": "npm run build; gh-pages -d dist; npm run clean",
+    "clean": "rm -r dist",
+    "parse": "node parse.js"
   },
   "author": "Andy Dayton <amdayton@gmail.com> (http://andydayton.com/)",
-  "license": "ISC",
   "dependencies": {
     "underscore": "^1.8.3",
     "whatwg-fetch": "^1.0.0"
   },
   "devDependencies": {
-    "klip": "^0.2.0",
     "aws-sdk": "^2.3.9",
     "budo": "^8.2.2",
     "budo-demo": "0.0.4",
     "gh-pages": "^0.11.0",
+    "klip": "^0.2.0",
     "rsync": "^0.4.0"
   }
 }
