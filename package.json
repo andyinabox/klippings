@@ -1,6 +1,6 @@
 {
   "name": "klippings",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Kindle clippings viewer",
   "main": "index.js",
   "scripts": {
