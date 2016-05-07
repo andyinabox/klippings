@@ -75,7 +75,7 @@ sync.execute(function(err, code, cmd) {
 
 			if(err) { throw new Error(err); }
 
-			uploadFile(destPath, "my-clippings.json", function() {
+			uploadFile(jsonPath, "my-clippings.json", function() {
 
 				if(err) { throw new Error(err); }
 

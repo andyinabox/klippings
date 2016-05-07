@@ -1,0 +1,23 @@
+body {
+	font-family: 'Helvetica';
+}
+
+.title {
+
+}
+
+.title h2 {
+	cursor: pointer;
+}
+
+.title .clippings {
+
+}
+
+.title .clippings blockquote {
+	font-family: 'Monaco';
+}
+
+.title .clippings.hidden {
+	display: none;
+}
