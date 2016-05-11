@@ -4,8 +4,8 @@
   "description": "Kindle clippings viewer",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js --live --open --title='klippings' -H=localhost --css=styles.css",
-    "build": "budo-demo index.js -c styles.css --title='klippings'",
+    "start": "budo index.js --live --open --title='klippings' -H localhost --css=styles.css -- -t hbsfy",
+    "build": "budo-demo index.js -c styles.css --title='klippings' -- hbsfy",
     "deploy": "npm run build; gh-pages -d dist; npm run clean",
     "clean": "rm -r dist",
     "parse": "node parse.js"
@@ -18,8 +18,10 @@
   "devDependencies": {
     "aws-sdk": "^2.3.9",
     "budo": "^8.2.2",
-    "budo-demo": "0.0.4",
+    "budo-demo": "0.0.5",
     "gh-pages": "^0.11.0",
+    "handlebars": "^4.0.5",
+    "hbsfy": "^2.7.0",
     "klip": "^0.2.0",
     "rsync": "^0.4.0"
   }
