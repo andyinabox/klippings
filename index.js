@@ -32,6 +32,8 @@ var main;
 
 fetch(JSON_URL).then(parseJSON).then(function(body) {
 
+	console.log('data', body);
+
 	document.body.appendChild(stringToDom(layoutTpl({
 		titleCount: body.titles.length
 	})));
@@ -1599,11 +1601,13 @@ module.exports = require("handlebars/runtime")["default"];
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper;
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class=\"clipping\">\n	<blockquote>"
-    + container.escapeExpression(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"content","hash":{},"data":data}) : helper)))
-    + "</blockquote>\n</div>";
+    + alias4(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"content","hash":{},"data":data}) : helper)))
+    + "</blockquote>\n	<p>Location: "
+    + alias4(((helper = (helper = helpers.locationRange || (depth0 != null ? depth0.locationRange : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"locationRange","hash":{},"data":data}) : helper)))
+    + "</p>\n</div>";
 },"useData":true});
 
 },{"hbsfy/runtime":21}],24:[function(require,module,exports){
@@ -1625,11 +1629,13 @@ module.exports = HandlebarsCompiler.template({"1":function(container,depth0,help
 
   return ((stack1 = container.invokePartial(partials.clipping,depth0,{"name":"clipping","data":data,"indent":"\t\t","helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {};
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "<div class=\"title\">\n	<h2>"
-    + container.escapeExpression(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h2>\n	<div class=\"clippings hidden\">\n"
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</h2>\n	<p>"
+    + alias4(((helper = (helper = helpers.author || (depth0 != null ? depth0.author : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"author","hash":{},"data":data}) : helper)))
+    + "</p>\n	<div class=\"clippings hidden\">\n"
     + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.clippings : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "	</div>\n</div>";
 },"usePartial":true,"useData":true});
