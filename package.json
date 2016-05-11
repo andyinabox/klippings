@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "budo index.js --live --open --title='klippings' -H localhost --css=styles.css -- -t hbsfy",
-    "build": "budo-demo index.js -c styles.css --title='klippings' -- hbsfy",
+    "build": "budo-demo index.js -c styles.css --title='klippings' -- -t hbsfy",
     "deploy": "npm run build; gh-pages -d dist; npm run clean",
     "clean": "rm -r dist",
     "parse": "node parse.js"
