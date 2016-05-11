@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "budo index.js --live --open --title='klippings' -H localhost --css=styles.css -- -t hbsfy",
-    "build": "budo-demo index.js -c styles.css --title='klippings' -- -t hbsfy",
+    "build": "budo-demo index.js -m -c styles.css -t 'klippings' -- -t hbsfy",
     "deploy": "npm run build; gh-pages -d dist; npm run clean",
     "clean": "rm -r dist",
+    "sync": "node sync.js",
     "parse": "node parse.js"
   },
   "author": "Andy Dayton <amdayton@gmail.com> (http://andydayton.com/)",
@@ -18,7 +19,7 @@
   "devDependencies": {
     "aws-sdk": "^2.3.9",
     "budo": "^8.2.2",
-    "budo-demo": "0.0.5",
+    "budo-demo": "^0.1.1",
     "gh-pages": "^0.11.0",
     "handlebars": "^4.0.5",
     "hbsfy": "^2.7.0",

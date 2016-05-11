@@ -31,6 +31,8 @@ var main;
 
 fetch(JSON_URL).then(parseJSON).then(function(body) {
 
+	console.log('data', body);
+
 	document.body.appendChild(stringToDom(layoutTpl({
 		titleCount: body.titles.length
 	})));
