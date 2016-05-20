@@ -8,8 +8,7 @@
     "build": "budo-demo index.js -m -c styles.css -t 'klippings' -- -t hbsfy",
     "deploy": "npm run build; gh-pages -d dist; npm run clean",
     "clean": "rm -r dist",
-    "sync": "node sync.js",
-    "parse": "node parse.js"
+    "sync": "node sync.js; node parse.js; node aws.js"
   },
   "author": "Andy Dayton <amdayton@gmail.com> (http://andydayton.com/)",
   "dependencies": {

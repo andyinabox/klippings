@@ -1,3 +1,4 @@
+var path = require('path');
 var Rsync = require('rsync');
 
 var srcPath = "/Volumes/Kindle/documents/My Clippings.txt";
